@@ -14,11 +14,14 @@ import java.util.List;
  * Puede tener un historial de compras (ventas realizadas).
  */
 public class Cliente extends Usuario {
-       private List<Venta> comprasRealizadas;
+    
+    private List<Venta> comprasRealizadas;
+
     public Cliente(String nombre, String usuario, String password) {
         super(nombre, usuario, password);
-         this.comprasRealizadas = new ArrayList<>();
+        this.comprasRealizadas = new ArrayList<>();
     }
+
     public void agregarCompra(Venta venta) {
         comprasRealizadas.add(venta);
     }
@@ -26,9 +29,4 @@ public class Cliente extends Usuario {
     public List<Venta> getComprasRealizadas() {
         return comprasRealizadas;
     }
-
-    Object getUsuario() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
 }
