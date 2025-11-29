@@ -24,10 +24,12 @@ public abstract class Pago {
     public double getMonto() {
         return monto;
     }
-
-    /**
-     * Método abstracto que cada forma de pago implementa a su manera.
-     * Debe devolver true si el pago fue exitoso, false si falló.
+ /**
+     * Método abstracto que ejecuta el pago.
+     * Cada subtipo de pago devuelve un mensaje describiendo
+     * el resultado del pago (éxito, datos relevantes, etc.).
+     *
+     * @return Mensaje con el resultado del pago.
      */
-    public abstract boolean realizarPago();
+    public abstract String realizarPago();
 }

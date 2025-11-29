@@ -13,16 +13,23 @@ package com.mycompany.proyecto_final;
  */
 public class PagoPayPal extends Pago{
     
-    private String correoCuenta;
+     private String correo;
+    private String contrasena;
 
-    public PagoPayPal(double monto, String correoCuenta) {
+    
+     // Crea un pago PayPal.
+     
+    public PagoPayPal(double monto, String correo, String contrasena) {
         super(monto);
-        this.correoCuenta = correoCuenta;
+        this.correo = correo;
+        this.contrasena = contrasena;
     }
-
+//Polimorfismoo de mensaje
     @Override
-    public boolean realizarPago() {
-        System.out.println("Procesando pago con PAYPAL por $" + monto + " de la cuenta " + correoCuenta);
-        return true;
+    public String realizarPago() {
+        // Simulación de pago exitoso con PayPal.
+        return "Pago con PAYPAL confirmado.\n"
+             + "Cuenta: " + correo + "\n"
+             + "Monto: $" + String.format("%.2f", monto);
     }
 }

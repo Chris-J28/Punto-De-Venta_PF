@@ -13,13 +13,15 @@ package com.mycompany.proyecto_final;
  */
 public class PagoEfectivo extends Pago{
     
+  // Crea un pago en efectivo.
     public PagoEfectivo(double monto) {
         super(monto);
     }
 
     @Override
-    public boolean realizarPago() {
-        System.out.println("Pago en EFECTIVO recibido por $" + monto);
-        return true;
+    public String realizarPago() {
+        // Simulación de registro de pago en efectivo.
+        return "Pago en EFECTIVO registrado.\n"
+             + "Monto recibido: $" + String.format("%.2f", monto);
     }
 }

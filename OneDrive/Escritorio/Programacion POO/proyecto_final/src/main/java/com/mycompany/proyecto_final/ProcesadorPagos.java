@@ -9,22 +9,16 @@ package com.mycompany.proyecto_final;
  * @author chris
  */
 /**
- * Clase de apoyo para procesar pagos de forma polimórfica.
- * Acepta cualquier objeto que sea de tipo Pago.
+ * Clase de utilidad que procesa pagos de forma polimórfica.
+ *
+ * El método procesarPago recibe cualquier objeto que herede de Pago
+ * (PagoTarjeta, PagoPayPal, PagoEfectivo, etc.) y llama a realizarPago()
+ * sin saber de qué tipo de pago se trata.
  */
 public class ProcesadorPagos {
-    /**
-     * Procesa un pago sin importar si es tarjeta, PayPal o efectivo.
-     */
-    public boolean procesarPago(Pago pago) {
-        boolean exito = pago.realizarPago();
-
-        if (exito) {
-            System.out.println("El pago fue procesado correctamente.");
-        } else {
-            System.out.println("Hubo un problema al procesar el pago.");
-        }
-
-        return exito;
+   
+    // Procesa el pago recibido usando polimorfismo.   
+    public static String procesarPago(Pago pago) {
+        return pago.realizarPago();
     }
 }
